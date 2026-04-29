@@ -1,0 +1,40 @@
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+}
+
+.container {
+    width: 320px;
+    margin: 60px auto;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border: none;
+    border-radius: 6px;
+}
+
+input {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+button {
+    background: #00c6ff;
+    cursor: pointer;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px;
+    text-align: center;
+}

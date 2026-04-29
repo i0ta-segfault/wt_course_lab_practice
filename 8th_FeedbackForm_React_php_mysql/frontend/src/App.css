@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f0f9ff;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.form {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px;
+  background: #38bdf8;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+.card {
+  background: white;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+}

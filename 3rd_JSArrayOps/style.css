@@ -1,0 +1,27 @@
+body {
+    background: #0f172a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.721);
+    border: none;
+    border-radius: 12px;
+}
+
+input {
+    color: white;
+    border: none;
+}
+
+input::placeholder {
+    color: rgb(0, 0, 0);
+}
+
+.output-box {
+    background: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 80px;
+}
