@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Store</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Online Book Store</h1>
+
+    <div class="nav">
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="catalog.html">View Catalog</a>
+    </div>
+
+    <h2>Available Books</h2>
+    <table id="table">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+        </tr>
+    </table>
+</div>
+
+<script>
+function loadBooks() {
+    fetch("http://localhost:8080/api/books")
+    .then(res => res.json())
+    .then(data => {
+        const table = document.getElementById("table");
+
+        data.forEach(b => {
+            table.innerHTML += `
+            <tr>
+                <td>${b.title}</td>
+                <td>${b.author}</td>
+                <td>${b.price}</td>
+            </tr>`;
+        });
+    });
+}
+
+loadBooks();
+</script>
+
+</body>
+</html>

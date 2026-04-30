@@ -1,0 +1,1 @@
+do F5 to check persist theme, theme stays what it was before refresh => persistence

@@ -1,0 +1,59 @@
+body {
+    font-family: Arial;
+    background: #f1f5f9;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    padding: 30px;
+}
+
+.card {
+    margin: 80px auto;
+    width: 300px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+.nav a {
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 70%;
+    background: white;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background: #3b82f6;
+    color: white;
+}

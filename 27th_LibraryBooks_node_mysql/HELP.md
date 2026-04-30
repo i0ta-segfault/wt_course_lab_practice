@@ -1,15 +1,14 @@
-run ```node db.js``` first -> will create mysql db
-
-run ```node server.js``` next to start REST API server
+run ```node seed.js``` to populate db
+run ```node server.js``` to run REST API server
 
 ## POST
-```http://localhost:3000/students```
+```http://localhost:3000/books```
 payload body :
 ```json
 {
-  "name": "",
-  "email": "",
-  "course": ""
+  "title": "Clean Code",
+  "author": "Robert Martin",
+  "year": 2008
 }
 ```
 
@@ -17,7 +16,7 @@ payload body :
 ---
 
 ## GET
-```http://localhost:3000/students```
+```http://localhost:3000/books```
 no payload body
 
 ---

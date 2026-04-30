@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="c" width="600" height="350" style="border:1px solid #ccc;"></canvas>
+
+<script>
+const c = document.getElementById("c");
+const ctx = c.getContext("2d");
+
+let drawing = false;
+
+c.addEventListener("mousedown", () => drawing = true);
+c.addEventListener("mouseup", () => drawing = false);
+c.addEventListener("mouseleave", () => drawing = false);
+
+c.addEventListener("mousemove", (e) => {
+  if (!drawing) return;
+
+  const x = e.offsetX;
+  const y = e.offsetY;
+
+  ctx.fillStyle = "#0ea5e9";
+  ctx.beginPath();
+  ctx.arc(x, y, 4, 0, Math.PI * 2);
+  ctx.fill();
+});
+</script>
+
+</body>
+</html>

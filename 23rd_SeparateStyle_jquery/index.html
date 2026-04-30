@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+body {
+  font-family: Arial;
+  transition: 0.3s;
+  text-align: center;
+  padding: 40px;
+}
+
+.container {
+  padding: 30px;
+  border-radius: 12px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+button {
+  padding: 10px 16px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Theme Switcher</h1>
+
+<button id="s1">Light</button>
+<button id="s2">Dark</button>
+<button id="s3">Sky</button>
+
+<div class="container card">
+  <h2>Sample Card</h2>
+  <p>This text changes with theme</p>
+  <button>Button</button>
+</div>
+
+<script>
+$("#s1").click(() => {
+  $("body").css({ background: "#f8fafc", color: "#111" });
+  $(".card").css({ background: "white", boxShadow: "0 5px 15px rgba(0,0,0,0.1)" });
+  $("button").css({ background: "#e2e8f0", color: "#111" });
+});
+
+$("#s2").click(() => {
+  $("body").css({ background: "#0f172a", color: "white" });
+  $(".card").css({ background: "#1e293b" });
+  $("button").css({ background: "#334155", color: "white" });
+});
+
+$("#s3").click(() => {
+  $("body").css({ background: "#e0f2fe", color: "#075985" });
+  $(".card").css({ background: "white" });
+  $("button").css({ background: "#38bdf8", color: "white" });
+});
+</script>
+
+</body>
+</html>

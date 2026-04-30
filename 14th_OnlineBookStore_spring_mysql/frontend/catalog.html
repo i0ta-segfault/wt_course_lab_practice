@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Catalog</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+// check if logged in
+if (localStorage.getItem("loggedIn") !== "true") {
+    alert("Login required");
+    window.location.href = "login.html";
+}
+</script>
+
+<div class="container">
+
+<h2>Book Catalog</h2>
+
+<button onclick="logout()">Logout</button>
+
+<table id="table">
+<tr>
+<th>Title</th>
+<th>Author</th>
+<th>Price</th>
+<th>Action</th>
+</tr>
+</table>
+
+<h3>Add Book</h3>
+
+<input id="title" placeholder="Title">
+<input id="author" placeholder="Author">
+<input id="price" placeholder="Price">
+
+<button onclick="addBook()">Add</button>
+
+</div>
+
+<script>
+
+function logout() {
+    localStorage.removeItem("loggedIn");
+    window.location.href = "index.html";
+}
+
+function loadBooks() {
+    fetch("http://localhost:8080/api/books")
+    .then(res => res.json())
+    .then(data => {
+        const table = document.getElementById("table");
+
+        // clear old rows except header
+        table.innerHTML = `
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>`;
+
+        data.forEach(b => {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td><input value="${b.title}" id="title-${b.id}"></td>
+                <td><input value="${b.author}" id="author-${b.id}"></td>
+                <td><input value="${b.price}" id="price-${b.id}"></td>
+                <td>
+                    <button onclick="updateBook(${b.id})">Update</button>
+                    <button onclick="deleteBook(${b.id})">Delete</button>
+                </td>
+            `;
+
+            table.appendChild(row);
+        });
+    });
+}
+
+function addBook() {
+    fetch("http://localhost:8080/api/books", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            title: title.value,
+            author: author.value,
+            price: price.value
+        })
+    }).then(() => location.reload());
+}
+
+function deleteBook(id) {
+    fetch(`http://localhost:8080/api/books/${id}`, {
+        method: "DELETE"
+    }).then(() => loadBooks());
+}
+
+function updateBook(id) {
+    const updated = {
+        title: document.getElementById(`title-${id}`).value,
+        author: document.getElementById(`author-${id}`).value,
+        price: document.getElementById(`price-${id}`).value
+    };
+
+    fetch(`http://localhost:8080/api/books/${id}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(updated)
+    }).then(() => {
+        alert("Updated");
+        loadBooks();
+    });
+}
+
+loadBooks();
+
+</script>
+
+</body>
+</html>

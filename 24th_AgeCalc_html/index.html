@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial;
+  background: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  width: 300px;
+}
+
+h2 {
+  color: #0ea5e9;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+button:hover {
+  background: #0284c7;
+}
+
+#out {
+  margin-top: 15px;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Age Calculator</h2>
+
+<input type="date" id="dob">
+<button onclick="calc()">Calculate</button>
+
+<p id="out"></p>
+</div>
+
+<script>
+function calc(){
+ let dob=new Date(document.getElementById("dob").value);
+ let now=new Date();
+
+ let y=now.getFullYear()-dob.getFullYear();
+ let m=now.getMonth()-dob.getMonth();
+ let d=now.getDate()-dob.getDate();
+
+ if(d<0){ m--; d+=30; }
+ if(m<0){ y--; m+=12; }
+
+ out.innerText = y+" years "+m+" months "+d+" days";
+}
+</script>
+
+</body>
+</html>
