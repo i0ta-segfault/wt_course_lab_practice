@@ -7,7 +7,10 @@ header("Content-Type: application/json");
 $conn = new mysqli("localhost", "root", "", "vit_result");
 
 $data = json_decode(file_get_contents("php://input"), true);
-
+if (!$data || !isset($data['name'], $data['course'])) {
+    echo json_encode(["error" => "Invalid input"]);
+    exit();
+}
 $name = $data['name'];
 $course = $data['course'];
 
