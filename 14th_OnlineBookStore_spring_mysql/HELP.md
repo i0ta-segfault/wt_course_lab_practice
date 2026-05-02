@@ -2,6 +2,8 @@ There are 2 folders : ```backend``` and ```frontend```
 
 IMPORTANT - create a db in mysql named ```book_db```
 
+Assuming mysql compass runs the mysql service on port 3306, if not make changes to ```application.properties``` in ```src/main/resources```
+
 ```backend``` has Spring API setup for login register books post get put delete
 run ```backend``` by doing mvn 
 ```cmd
