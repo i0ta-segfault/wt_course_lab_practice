@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Student from "./Student";
-import Result from "./Result";
+import Student from "./Student.jsx";
+import Result from "./Result.jsx";
 import "./App.css";
 
 function App() {
