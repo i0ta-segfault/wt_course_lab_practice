@@ -4,7 +4,10 @@
   ```
   - allows the xampp apache web server to serve projects from places other than htdocs
   - make ```WT_lab_practice``` folder in ```htdocs``` and same folder name in the other location you want and then run the above command
-    - remember to account for D drive change and whatnot
+    - remember to account for D or whatever other drive change and whatnot
+
+- if unable to do above step, just make a ```WT_lab_practice``` folder in ```htdocs``` and clone there. You can name the folder anything other than ```WT_lab_practice``` too just remember to change the folder name in all paths
+
 - for projects where db needs to be populated head to ```http://localhost/WT_lab_practice/assignment_folder_name/backend/seed.php```
 
 - remember to not rename folder because all API routes are set as per foldername
